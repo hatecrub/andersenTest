@@ -15,13 +15,22 @@
     <title>All <c:out value="${sessionScope.get('username')}" />'s notes</title>
 </head>
 <body>
-<a href="/notes">Back to notes</a>
-<table bgcolor="28822f" align="center" width="70%" border="0" cellspacing="5" cellpadding="5">
+<table  bgcolor=gray align="center" width="70%" border="1" cellspacing="5" cellpadding="5">
+    <tr>
+        <a href="/notes">Back to notes</a>
+    </tr>
+
+    <tr>
+        <th>ID</th>
+        <th>Note</th>
+    </tr>
 
 <c:forEach items="${requestScope.get('allNotes')}" var="note" >
     <tr><td><c:out value="${note.id}" /></td><td><c:out value="${note.note}" /></td></tr>
 </c:forEach>
+
 </table>
+
 <a href="/logout">LogOut</a>
 </body>
 </html>

@@ -12,20 +12,26 @@
   <title>JSP Page</title>
 </head>
 <body>
-<h1>Entry Form</h1>
+<table  bgcolor=gray align="center" width="70%" border="0" cellspacing="5" cellpadding="5">
+
+    <caption><h1>Log In</h1></caption>
 
 <form name="Name Input Form" action="/login" method="post">
-    <br>
-    Enter username:
-    <input type="text" name="name" />
-    <br>
-    <br>
-    Enter password:
-    <input type="password" name="password" />
-    <br>
-    <br>
-    <input type="submit" value="OK" />
+    <tr>
+        <td>Enter username:</td>
+        <td><input type="text" name="name" /></td>
+    </tr>
+    <tr>
+        <td>Enter password:</td>
+        <td><input type="password" name="password" /></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="submit" value="OK" /></td>
+    </tr>
+
 </form>
+</table>
 </body>
 </html>
 

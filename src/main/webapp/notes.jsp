@@ -20,7 +20,7 @@
 </head>
 <body>
 <table align="center" width="70%" border="0" cellspacing="5" cellpadding="5">
-    <tr bgcolor="#28822f">
+    <tr bgcolor=gray>
 
         <form name="table" action="/notes" method="post">
         <td width="60%">

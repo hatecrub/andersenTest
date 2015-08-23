@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: user
@@ -16,9 +17,7 @@
     <%= message%>
     </h1>
 
-  <form name="Error login" action="home" method="get">
     <br>
-    <input type="submit" value="Back to login page" />
-  </form>
+    <a href="/home">Back to log in page</a>
 </body>
 </html>
