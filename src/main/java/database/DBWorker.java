@@ -3,9 +3,7 @@ package database;
 import java.sql.*;
 import java.util.ArrayList;
 
-/**
- * Created by user on 22.08.2015.
- */
+
 public class DBWorker {
     private final String HOST = "jdbc:postgresql://localhost:5432/bdnotes";
     private final String USERNAME = "postgres";

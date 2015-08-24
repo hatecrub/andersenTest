@@ -1,8 +1,5 @@
 package database;
 
-/**
- * Created by user on 22.08.2015.
- */
 public class User {
     private int id;
     private String username;

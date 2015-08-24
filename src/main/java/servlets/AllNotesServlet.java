@@ -9,9 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Created by user on 24.08.2015.
- */
 @WebServlet("/allNotes")
 public class AllNotesServlet extends HttpServlet {
     @Override

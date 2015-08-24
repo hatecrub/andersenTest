@@ -10,9 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**
- * Created by user on 22.08.2015.
- */
 @WebServlet("/home")
 public class HomeServlet extends HttpServlet {
 

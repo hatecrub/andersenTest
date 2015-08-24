@@ -13,10 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- * Created by user on 22.08.2015.
- */
-
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
