@@ -14,7 +14,7 @@
 <body>
   <% String message = (String)request.getAttribute("message"); %>
   <h1>
-    <%= message%>
+    <c:out value="${requestScope.get('message')}" />
     </h1>
 
     <br>

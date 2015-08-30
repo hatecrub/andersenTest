@@ -9,7 +9,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>JSP Page</title>
+  <title>Home page</title>
 </head>
 <body>
 <table  bgcolor=gray align="center" width="70%" border="0" cellspacing="5" cellpadding="5">

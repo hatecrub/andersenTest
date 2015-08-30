@@ -11,11 +11,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <%
-        String name = (String)session.getAttribute("username");
-    %>
     <title>
-        <%=name%>'s notes
+        <c:out value="${sessionScope.get('username')}" />'s notes
     </title>
 </head>
 <body>
@@ -33,29 +30,27 @@
                     <th>Note</th>
                 </tr>
 
-                <%
-                    ArrayList<Note>lastNotes = (ArrayList)request.getAttribute("lastNotes");
-                    for (Note note : lastNotes) {
-                        if(request.getAttribute("activeRadio")!=null && (Integer)request.getAttribute("activeRadio") == note.getId()) {
-                %>
+                <c:forEach items="${requestScope.get('lastNotes')}" var="note" >
 
+                    <c:choose>
+                        <c:when test="${requestScope.get('activeRadio')!=null && requestScope.get('activeRadio') == note.id}">
 
+                            <tr>
+                                <td><input type="radio" name="number" value="${note.id}" checked /></td>
+                                <td><c:out value="${note.id}" /></td>
+                                <td><c:out value="${note.note}" /></td>
+                            </tr>
+                        </c:when>
+                        <c:when test="${requestScope.get('activeRadio') == null || requestScope.get('activeRadio') != note.id}">
+                            <tr>
+                                <td><input type="radio" name="number" value="${note.id}" /></td>
+                                <td><c:out value="${note.id}" /></td>
+                                <td><c:out value="${note.note}" /></td>
+                            </tr>
+                        </c:when>
 
-
-                    <tr><td>  <input type="radio" name="number" value="<%=note.getId()%>" checked></td>
-                        <td><%=note.getId()%></td><td><%=note.getNote()%></td></tr>
-                    <%
-                        } else {
-                    %>
-
-                    <tr><td>  <input type="radio" name="number" value=<%=note.getId()%> ></td>
-                        <td><%=note.getId()%></td><td><%=note.getNote()%></td></tr>
-
-                <%
-                    }
-                }
-                %>
-
+                    </c:choose>
+                </c:forEach>
             </table>
             </p>
 
@@ -71,11 +66,15 @@
 
             <p align="center">
 
-                <%if(request.getAttribute("editNote")!=null) {%>
-                <br/><input type="text" name="newNote" value="<%=(String)request.getAttribute("editNote")%>" /><br/>
-                <%} else {%>
-                <br/><input type="text" name="newNote" /><br/>
-                <%}%>
+
+                <c:choose>
+                    <c:when test="${requestScope.get('editNote') != null }" >
+                        <br/><input type="text" name="newNote" value="${requestScope.get('editNote')}" /><br/>
+                    </c:when>
+                    <c:when test="${requestScope.get('editNote') == null }" >
+                        <br/><input type="text" name="newNote" /><br/>
+                    </c:when>
+                </c:choose>
 
                 <input name="addButton" type="submit" value="add new note" />
                 <input name="applyButton" type="submit" value="apply edit" />
